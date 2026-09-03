@@ -1,764 +1,568 @@
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sonu Kirana Store - Jugsana, Baldeo, Mathura">
-  <title>Sonu Kirana Store | Jugsana, Baldeo, Mathura</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #17321f;
-      background: #f7faf5;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .topbar {
-      background: #073b22;
-      color: white;
-      text-align: center;
-      padding: 8px;
-      font-size: 14px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: white;
-      border-bottom: 1px solid #ddd;
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 900;
-      color: #073b22;
-    }
-
-    .logo span {
-      color: #e5ad00;
-    }
-
-    .navlinks {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-      font-weight: bold;
-    }
-
-    .navlinks a:hover {
-      color: #d39d00;
-    }
-
-    .call {
-      background: #f1bb00;
-      padding: 10px 17px;
-      border-radius: 30px;
-      font-weight: bold;
-    }
-
-    .hero {
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      color: white;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(3, 42, 23, 0.95),
-          rgba(3, 42, 23, 0.65),
-          rgba(3, 42, 23, 0.15)
-        ),
-        url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1800&q=85");
-
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-inner {
-      max-width: 1200px;
-      width: 100%;
-      margin: auto;
-      padding: 70px 20px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #f1bb00;
-      color: #12301e;
-      padding: 7px 15px;
-      border-radius: 30px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: clamp(45px, 7vw, 80px);
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-
-    h1 span {
-      color: #f5c62d;
-    }
-
-    .hero p {
-      font-size: 20px;
-      max-width: 650px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .btn {
-      padding: 14px 23px;
-      border-radius: 10px;
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: #f1bb00;
-      color: #17321f;
-    }
-
-    .btn-light {
-      border: 1px solid white;
-      color: white;
-    }
-
-    section {
-      padding: 75px 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-title small {
-      color: #b18400;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .section-title h2 {
-      font-size: 38px;
-      margin: 5px 0;
-    }
-
-    .section-title p {
-      color: #657269;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .feature {
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .icon {
-      font-size: 38px;
-      margin-bottom: 8px;
-    }
-
-    .products {
-      background: #edf5eb;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.09);
-      transition: 0.25s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card-body {
-      padding: 17px;
-    }
-
-    .card h3 {
-      font-size: 20px;
-    }
-
-    .tag {
-      display: inline-block;
-      margin-top: 6px;
-      background: #edf6dc;
-      color: #38621f;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .card-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 15px;
-    }
-
-    .price {
-      font-weight: bold;
-      color: #073b22;
-    }
-
-    .order {
-      background: #073b22;
-      color: white;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about img {
-      width: 100%;
-      height: 390px;
-      object-fit: cover;
-      border-radius: 25px;
-    }
-
-    .about h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .checks {
-      list-style: none;
-      margin-top: 20px;
-    }
-
-    .checks li {
-      margin: 10px 0;
-      font-weight: bold;
-    }
-
-    .checks li::before {
-      content: "✓";
-      color: #b18400;
-      margin-right: 10px;
-    }
-
-    .contact {
-      background: #073b22;
-      color: white;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .contact-card {
-      background: rgba(255,255,255,0.08);
-      padding: 30px;
-      border-radius: 20px;
-    }
-
-    .contact-card h2 {
-      color: #f5c62d;
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .contact-item {
-      font-size: 19px;
-      margin: 15px 0;
-    }
-
-    .contact-button {
-      display: inline-block;
-      background: #f1bb00;
-      color: #17321f;
-      padding: 13px 20px;
-      border-radius: 10px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 2000;
-      background: #20b85a;
-      color: white;
-      padding: 13px 18px;
-      border-radius: 50px;
-      font-weight: bold;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    }
-
-    footer {
-      background: #041f13;
-      color: #cbd9d0;
-      text-align: center;
-      padding: 25px;
-    }
-
-    footer strong {
-      color: white;
-    }
-
-    @media (max-width: 900px) {
-      .navlinks {
-        display: none;
-      }
-
-      .features,
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 550px) {
-      .features,
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
-
-      .hero {
-        min-height: 560px;
-      }
-
-      .hero-inner {
-        padding: 50px 18px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      .section-title h2,
-      .about h2 {
-        font-size: 30px;
-      }
-
-      .card img {
-        height: 220px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonu Kirana Store &mdash; Jugsana, Baldeo, Mathura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F1E3;
+    --paper-dim:#ECE3C9;
+    --ink:#241C12;
+    --ink-soft:#5A4F3C;
+    --indigo:#1B2B3F;
+    --indigo-deep:#101C29;
+    --gold:#CB9A3B;
+    --gold-light:#E8C877;
+    --gold-deep:#9C7222;
+    --brick:#8B3A2B;
+    --line:#DFD3AC;
+    --white:#FFFCF4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Instrument Serif', serif;
+    font-weight:400;
+    color:var(--indigo-deep);
+    line-height:1.1;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  :focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} }
+
+  /* ---- Top offer strip ---- */
+  .offer-strip{
+    background:var(--indigo-deep);color:var(--gold-light);
+    text-align:center;font-size:0.85rem;padding:8px 16px;
+    letter-spacing:0.02em;
+  }
+  .offer-strip strong{color:var(--white);}
+
+  /* ---- Header ---- */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(246,241,227,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand-mark{
+    width:36px;height:36px;border-radius:50%;
+    background:conic-gradient(from 0deg, var(--gold-light), var(--brick), var(--indigo), var(--gold-light));
+    animation:spin 7s linear infinite;
+    box-shadow:0 0 0 3px var(--white), 0 4px 10px rgba(0,0,0,0.15);
+  }
+  @media (prefers-reduced-motion: reduce){ .brand-mark{animation:none;} }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .brand-text{font-family:'Instrument Serif', serif;font-size:1.42rem;color:var(--indigo-deep);}
+  .brand-sub{font-size:0.68rem;color:var(--gold-deep);letter-spacing:0.06em;margin-top:-2px;}
+  .nav-links{display:flex;gap:30px;font-size:0.95rem;}
+  .nav-links a{position:relative;color:var(--ink-soft);}
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;
+    background:var(--gold-deep);transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-call{
+    background:linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+    color:var(--indigo-deep);
+    padding:10px 22px;border-radius:999px;font-size:0.92rem;font-weight:700;
+    display:inline-flex;align-items:center;gap:8px;
+    box-shadow:0 6px 16px rgba(203,154,59,0.35);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .nav-call:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(203,154,59,0.45);}
+
+  /* ---- Hero ---- */
+  .hero{position:relative;padding:80px 0 66px;overflow:hidden;border-bottom:1px solid var(--line);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:44px;align-items:center;}
+
+  .rating-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--white);border:1px solid var(--line);
+    padding:8px 16px;border-radius:999px;font-size:0.85rem;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    margin-bottom:20px;
+    opacity:0;animation:fadeUp .7s ease .05s forwards;
+  }
+  .stars{color:var(--gold-deep);letter-spacing:1px;}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:0.9rem;color:var(--ink-soft);margin-bottom:20px;
+    opacity:0;animation:fadeUp .7s ease .12s forwards;
+  }
+  .pulse-dot{width:8px;height:8px;border-radius:50%;background:#3E7A44;animation:pulse 1.8s infinite;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(62,122,68,0.5);}
+    70%{box-shadow:0 0 0 9px rgba(62,122,68,0);}
+    100%{box-shadow:0 0 0 0 rgba(62,122,68,0);}
+  }
+  .hero h1{font-size:clamp(2.5rem, 5vw, 3.7rem);opacity:0;animation:fadeUp .8s ease .2s forwards;}
+  .hero h1 em{
+    color:var(--brick);font-style:italic;position:relative;
+  }
+  .hero-sub{
+    margin-top:20px;font-size:1.1rem;color:var(--ink-soft);max-width:44ch;
+    opacity:0;animation:fadeUp .8s ease .32s forwards;
+  }
+  .hero-ctas{margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease .44s forwards;}
+  .trust-line{
+    margin-top:30px;display:flex;gap:26px;flex-wrap:wrap;
+    opacity:0;animation:fadeUp .8s ease .55s forwards;
+  }
+  .trust-line span{font-size:0.86rem;color:var(--ink-soft);display:flex;align-items:center;gap:6px;}
+  @keyframes fadeUp{ from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
+  @media (prefers-reduced-motion: reduce){
+    .rating-badge,.hero-eyebrow,.hero h1,.hero-sub,.hero-ctas,.trust-line{animation:none;opacity:1;}
+  }
+  .btn{
+    padding:15px 30px;font-size:0.96rem;font-weight:700;border-radius:999px;
+    display:inline-flex;align-items:center;gap:8px;position:relative;overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+    color:var(--indigo-deep);
+    box-shadow:0 10px 24px rgba(203,154,59,0.38);
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(203,154,59,0.48);}
+  .btn-primary::after{
+    content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform:skewX(-20deg);
+    animation:shimmer 3.2s ease-in-out infinite;
+  }
+  @keyframes shimmer{ 0%{left:-60%;} 45%{left:120%;} 100%{left:120%;} }
+  @media (prefers-reduced-motion: reduce){ .btn-primary::after{animation:none;display:none;} }
+  .btn-ghost{border:1.5px solid var(--indigo);color:var(--indigo);background:transparent;}
+  .btn-ghost:hover{background:var(--indigo);color:var(--white);transform:translateY(-3px);}
+
+  /* ---- Hero photo collage ---- */
+  .hero-art{position:relative;aspect-ratio:1/1;opacity:0;animation:fadeUp .9s ease .3s forwards;}
+  @media (prefers-reduced-motion: reduce){ .hero-art{animation:none;opacity:1;} }
+  .hero-photo{
+    position:absolute;border-radius:16px;overflow:hidden;
+    box-shadow:0 20px 44px rgba(16,28,41,0.28);
+    border:5px solid var(--white);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .hero-photo.main{top:6%;left:4%;width:78%;height:78%;animation:floatSlow 5.5s ease-in-out infinite;}
+  .hero-photo.accent{bottom:2%;right:0;width:48%;height:48%;animation:floatSlow 4.2s ease-in-out infinite reverse;z-index:2;}
+  @keyframes floatSlow{
+    0%,100%{transform:translateY(0) rotate(0deg);}
+    50%{transform:translateY(-14px) rotate(-1.2deg);}
+  }
+  @media (prefers-reduced-motion: reduce){ .hero-photo.main,.hero-photo.accent{animation:none;} }
+  .hero-photo:hover img{transform:scale(1.06);}
+  .badge-float{
+    position:absolute;top:0%;right:8%;z-index:3;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+    color:var(--indigo-deep);font-weight:700;font-size:0.85rem;
+    padding:11px 18px;border-radius:999px;
+    box-shadow:0 10px 22px rgba(178,128,30,0.4);
+    animation:bobble 3s ease-in-out infinite;
+  }
+  @keyframes bobble{
+    0%,100%{transform:translateY(0) rotate(-3deg);}
+    50%{transform:translateY(-8px) rotate(3deg);}
+  }
+  @media (prefers-reduced-motion: reduce){ .badge-float{animation:none;} }
+
+  /* ---- Marquee ---- */
+  .marquee-band{background:var(--indigo);overflow:hidden;padding:16px 0;border-bottom:1px solid var(--line);}
+  .marquee-track{display:flex;width:max-content;animation:scroll 22s linear infinite;}
+  @media (prefers-reduced-motion: reduce){ .marquee-track{animation-duration:60s;} }
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .marquee-item{color:var(--white);font-size:1.02rem;padding:0 30px;display:flex;align-items:center;gap:30px;white-space:nowrap;}
+  .marquee-item .sep{color:var(--gold-light);}
+
+  /* ---- Parallax banner ---- */
+  .parallax-banner{position:relative;height:360px;overflow:hidden;border-bottom:1px solid var(--line);}
+  .parallax-banner img{position:absolute;top:-15%;left:0;width:100%;height:130%;object-fit:cover;will-change:transform;}
+  .parallax-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(16,28,41,0.6), rgba(16,28,41,0.3));display:flex;align-items:center;}
+  .parallax-overlay .wrap p{color:var(--white);font-family:'Instrument Serif', serif;font-style:italic;font-size:clamp(1.5rem,3vw,2.3rem);max-width:24ch;}
+
+  /* ---- Trust badges strip ---- */
+  .badges{padding:56px 0;border-bottom:1px solid var(--line);}
+  .badges-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .badge-item{background:var(--white);padding:30px 22px;text-align:center;transition:transform .2s ease, background .2s ease;}
+  .badge-item:hover{transform:translateY(-4px);background:var(--paper-dim);}
+  .badge-item .bicon{font-size:1.7rem;margin-bottom:10px;display:block;}
+  .badge-item h4{font-family:'Work Sans', sans-serif;font-weight:600;font-size:0.95rem;color:var(--ink);}
+  .badge-item p{font-size:0.82rem;color:var(--ink-soft);margin-top:4px;}
+
+  /* ---- Products ---- */
+  .products{padding:90px 0;border-bottom:1px solid var(--line);}
+  .section-head{margin-bottom:48px;max-width:56ch;}
+  .section-head span.tag{color:var(--brick);font-family:'Instrument Serif', serif;font-style:italic;font-size:1.1rem;}
+  .section-head h2{font-size:clamp(2rem,3.4vw,2.7rem);margin-top:6px;}
+  .section-head p{color:var(--ink-soft);margin-top:12px;font-size:1.02rem;}
+
+  .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .product-card{background:var(--white);transition:transform .25s ease;overflow:hidden;position:relative;}
+  .product-card:hover{transform:translateY(-5px);}
+  .product-photo{aspect-ratio:4/3;overflow:hidden;position:relative;}
+  .product-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .product-card:hover .product-photo img{transform:scale(1.08);}
+  .product-tag{
+    position:absolute;top:12px;left:12px;
+    background:var(--gold-deep);color:var(--white);font-size:0.72rem;font-weight:700;
+    padding:5px 12px;border-radius:999px;letter-spacing:0.03em;
+  }
+  .product-card .body{padding:24px 26px 28px;}
+  .product-card h3{font-size:1.2rem;color:var(--ink);font-weight:400;}
+  .product-card p{color:var(--ink-soft);font-size:0.92rem;margin-top:6px;}
+  .product-card .icon{font-size:1.6rem;display:inline-block;margin-bottom:2px;transition:transform .3s ease;}
+  .product-card:hover .icon{transform:rotate(-8deg) scale(1.1);}
+
+  /* ---- Testimonials ---- */
+  .testimonials{padding:90px 0;border-bottom:1px solid var(--line);background:var(--paper-dim);}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:8px;}
+  .test-card{
+    background:var(--white);border-radius:12px;padding:30px 26px;
+    box-shadow:0 10px 26px rgba(16,28,41,0.06);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .test-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(16,28,41,0.1);}
+  .test-card .stars{display:block;margin-bottom:12px;}
+  .test-card p{color:var(--ink-soft);font-size:0.95rem;font-style:italic;}
+  .test-name{margin-top:16px;font-size:0.88rem;color:var(--ink);font-weight:600;}
+  .test-note{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold-deep);margin-top:24px;text-align:center;}
+
+  /* ---- Why us ---- */
+  .why{padding:90px 0;border-bottom:1px solid var(--line);}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:8px;}
+  .why-item{padding-top:22px;border-top:2px solid var(--gold);}
+  .why-item h3{font-size:1.3rem;color:var(--ink);font-weight:400;}
+  .why-item p{color:var(--ink-soft);font-size:0.95rem;margin-top:8px;}
+
+  /* ---- Location ---- */
+  .location{padding:90px 0;}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .loc-card{background:var(--indigo);color:var(--white);padding:42px;border-radius:14px;position:relative;overflow:hidden;}
+  .loc-card::before{
+    content:"";position:absolute;top:-40px;right:-40px;width:170px;height:170px;
+    border-radius:50%;background:radial-gradient(circle, rgba(232,200,119,0.35), transparent 70%);
+  }
+  .loc-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.16);font-size:0.98rem;}
+  .loc-row:last-child{border-bottom:none;}
+  .loc-row span.lbl{color:var(--gold-light);}
+  .loc-call{
+    margin-top:26px;display:inline-flex;align-items:center;gap:10px;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+    color:var(--indigo-deep);font-weight:700;
+    padding:14px 26px;border-radius:999px;font-size:1rem;
+    box-shadow:0 10px 22px rgba(203,154,59,0.35);
+    transition:transform .2s ease;
+  }
+  .loc-call:hover{transform:scale(1.04);}
+  .loc-map{
+    aspect-ratio:1/1;border-radius:14px;background:var(--paper-dim);
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:26px 26px;position:relative;border:1px solid var(--line);
+  }
+  .loc-map .pin{
+    position:absolute;top:46%;left:48%;width:16px;height:16px;
+    background:var(--brick);border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+    animation:bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce{ 0%,100%{transform:rotate(-45deg) translateY(0);} 50%{transform:rotate(-45deg) translateY(-8px);} }
+  @media (prefers-reduced-motion: reduce){ .loc-map .pin{animation:none;} }
+
+  /* ---- Footer ---- */
+  footer{background:var(--indigo-deep);color:rgba(255,255,255,0.75);padding:40px 0;}
+  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:0.9rem;}
+  .foot-row strong{color:var(--white);}
+
+  /* ---- Floating sticky actions ---- */
+  .floating-actions{
+    position:fixed;bottom:22px;right:22px;z-index:80;
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .fab{
+    width:56px;height:56px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.5rem;color:var(--white);
+    box-shadow:0 10px 24px rgba(0,0,0,0.25);
+    transition:transform .2s ease;
+  }
+  .fab:hover{transform:scale(1.08);}
+  .fab-call{background:var(--indigo);}
+  .fab-whatsapp{background:#3E9E52;animation:fabPulse 2.4s ease-in-out infinite;}
+  @keyframes fabPulse{
+    0%,100%{box-shadow:0 10px 24px rgba(0,0,0,0.25), 0 0 0 0 rgba(62,158,82,0.5);}
+    50%{box-shadow:0 10px 24px rgba(0,0,0,0.25), 0 0 0 10px rgba(62,158,82,0);}
+  }
+  @media (prefers-reduced-motion: reduce){ .fab-whatsapp{animation:none;} }
+
+  @media (max-width: 860px){
+    .nav-links{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{order:-1;max-width:340px;margin:0 auto 12px;}
+    .badges-grid{grid-template-columns:1fr 1fr;}
+    .product-grid{grid-template-columns:1fr;}
+    .test-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;gap:26px;}
+    .loc-grid{grid-template-columns:1fr;gap:32px;}
+    .parallax-banner{height:220px;}
+  }
+</style>
 </head>
-
 <body>
 
-  <div class="topbar">
-    🛒 सभी तरह का किराना सामान | 📞 9837392455
-  </div>
+<div class="offer-strip">🌟 <strong>Fresh Stock, Fair Price</strong> &mdash; Your trusted kirana store, open every single day</div>
 
-  <header>
-    <nav>
-      <div class="logo">
-        SONU <span>KIRANA STORE</span>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div>
+        <div class="brand-text">Sonu Kirana Store</div>
+        <div class="brand-sub">JUGSANA · BALDEO · MATHURA</div>
       </div>
-
-      <ul class="navlinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <a class="call" href="tel:9837392455">
-        📞 Call Now
-      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#testimonials">Customers</a>
+      <a href="#location">Store &amp; Hours</a>
     </nav>
-  </header>
+    <a href="tel:+919837392455" class="nav-call">📞 9837392455</a>
+  </div>
+</header>
 
-  <main id="home">
-
-    <section class="hero">
-      <div class="hero-inner">
-
-        <div class="badge">
-          ⭐ भरोसेमंद स्थानीय किराना स्टोर
-        </div>
-
-        <h1>
-          SONU<br>
-          <span>KIRANA STORE</span>
-        </h1>
-
-        <p>
-          सभी तरह का किराना और रोज़मर्रा का सामान एक ही जगह।
-          अच्छी क्वालिटी, उचित दाम और आपकी सुविधा हमारी प्राथमिकता।
-        </p>
-
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#products">
-            🛒 सामान देखें
-          </a>
-
-          <a class="btn btn-light" href="tel:9837392455">
-            📞 9837392455
-          </a>
-        </div>
-
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-content">
+      <div class="rating-badge"><span class="stars">★★★★★</span> Loved by families nearby</div>
+      <div class="hero-eyebrow"><span class="pulse-dot"></span> Open now &mdash; every day, 7 AM to 9 PM</div>
+      <h1>Everyday groceries, from a shop that <em>knows your street</em>.</h1>
+      <p class="hero-sub">Sonu Kirana Store in Jugsana, Baldeo, Mathura &mdash; oil, flour, sugar, spices, tea, and everything your kitchen needs, all in one place.</p>
+      <div class="hero-ctas">
+        <a href="tel:+919837392455" class="btn btn-primary">📞 Call Now</a>
+        <a href="#location" class="btn btn-ghost">See Store Location</a>
       </div>
-    </section>
-
-
-    <section>
-
-      <div class="container">
-
-        <div class="section-title">
-          <small>WHY CHOOSE US</small>
-          <h2>Sonu Kirana Store क्यों?</h2>
-          <p>
-            आपकी रोज़मर्रा की जरूरतों के लिए भरोसेमंद खरीदारी।
-          </p>
-        </div>
-
-        <div class="features">
-
-          <div class="feature">
-            <div class="icon">🥇</div>
-            <h3>अच्छी क्वालिटी</h3>
-            <p>रोज़मर्रा के लिए भरोसेमंद सामान।</p>
-          </div>
-
-          <div class="feature">
-            <div class="icon">💰</div>
-            <h3>उचित दाम</h3>
-            <p>आपकी जरूरत के अनुसार किफायती विकल्प।</p>
-          </div>
-
-          <div class="feature">
-            <div class="icon">🛒</div>
-            <h3>कई प्रकार का सामान</h3>
-            <p>एक ही जगह पर जरूरी सामान।</p>
-          </div>
-
-          <div class="feature">
-            <div class="icon">🤝</div>
-            <h3>ग्राहक सेवा</h3>
-            <p>आसान संपर्क और ग्राहक सुविधा।</p>
-          </div>
-
-        </div>
-
+      <div class="trust-line">
+        <span>✅ Quality Checked</span>
+        <span>⚖️ Correct Weight</span>
+        <span>🏠 Neighbourhood Trust</span>
       </div>
+    </div>
 
-    </section>
-
-
-    <section class="products" id="products">
-
-      <div class="container">
-
-        <div class="section-title">
-          <small>OUR PRODUCTS</small>
-          <h2>हमारे सामान</h2>
-          <p>
-            चावल, आटा, दाल, चीनी, चाय, तेल, मसाले और बहुत कुछ।
-          </p>
-        </div>
-
-
-        <div class="grid">
-
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=700&q=80" alt="चावल">
-            <div class="card-body">
-              <h3>चावल</h3>
-              <span class="tag">Rice</span>
-
-              <div class="card-bottom">
-                <span class="price">उपलब्ध</span>
-                <a class="order" href="tel:9837392455">पूछें</a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80" alt="आटा">
-            <div class="card-body">
-              <h3>आटा</h3>
-              <span class="tag">Flour</span>
-
-              <div class="card-bottom">
-                <span class="price">उपलब्ध</span>
-                <a class="order" href="tel:9837392455">पूछें</a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1515543904379-3d757afe72e5?auto=format&fit=crop&w=700&q=80" alt="दाल">
-            <div class="card-body">
-              <h3>दाल</h3>
-              <span class="tag">Pulses</span>
-
-              <div class="card-bottom">
-                <span class="price">उपलब्ध</span>
-                <a class="order" href="tel:9837392455">पूछें</a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=700&q=80" alt="तेल">
-            <div class="card-body">
-              <h3>खाने का तेल</h3>
-              <span class="tag">Cooking Oil</span>
-
-              <div class="card-bottom">
-                <span class="price">उपलब्ध</span>
-                <a class="order" href="tel:9837392455">पूछें</a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=700&q=80" alt="चीनी">
-            <div class="card-body">
-              <h3>चीनी</h3>
-              <span class="tag">Sugar</span>
-
-              <div class="card-bottom">
-                <span class="price">उपलब्ध</span>
-                <a class="order" href="tel:9837392455">पूछें</a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=700&q=80" alt="चाय">
-            <div class="card-body">
-              <h3>चाय</h3>
-              <span class="tag">Tea</span>
-
-              <div class="card-bottom">
-                <span class="price">उपलब्ध</span>
-                <a class="order" href="tel:9837392455">पूछें</a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=700&q=80" alt="मसाले">
-            <div class="card-body">
-              <h3>मसाले</h3>
-              <span class="tag">Spices</span>
-
-              <div class="card-bottom">
-                <span class="price">उपलब्ध</span>
-                <a class="order" href="tel:9837392455">पूछें</a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=700&q=80" alt="बिस्किट और स्नैक्स">
-            <div class="card-body">
-              <h3>बिस्किट / स्नैक्स</h3>
-              <span class="tag">Snacks</span>
-
-              <div class="card-bottom">
-                <span class="price">उपलब्ध</span>
-                <a class="order" href="tel:9837392455">पूछें</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+    <div class="hero-art">
+      <div class="badge-float">Open Daily ✓</div>
+      <div class="hero-photo main">
+        <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Shelves stocked with grocery items">
       </div>
-
-    </section>
-
-
-    <section id="about">
-
-      <div class="container about">
-
-        <img
-          src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1000&q=85"
-          alt="किराना स्टोर"
-        >
-
-        <div>
-
-          <div class="section-title" style="text-align:left;margin-bottom:15px">
-            <small>ABOUT STORE</small>
-            <h2>आपका अपना स्थानीय किराना स्टोर</h2>
-          </div>
-
-          <p>
-            Sonu Kirana Store में आपको घर और रोज़मर्रा की जरूरत का
-            सभी तरह का सामान मिल सकता है। हमारे स्टोर पर आकर सामान
-            देखें या उपलब्धता के लिए फोन करें।
-          </p>
-
-          <ul class="checks">
-            <li>रोज़मर्रा का किराना सामान</li>
-            <li>चावल, आटा, दाल, चीनी और तेल</li>
-            <li>चाय, मसाले, बिस्किट और स्नैक्स</li>
-            <li>उचित दाम और ग्राहक सुविधा</li>
-          </ul>
-
-        </div>
-
+      <div class="hero-photo accent">
+        <img src="https://images.unsplash.com/photo-1697294872375-9942fd94d2a7?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Rows of spice jars">
       </div>
+    </div>
+  </div>
+</section>
 
-    </section>
+<div class="marquee-band">
+  <div class="marquee-track">
+    <div class="marquee-item">
+      <span>Mustard Oil</span><span class="sep">•</span>
+      <span>Wheat Flour</span><span class="sep">•</span>
+      <span>Sugar</span><span class="sep">•</span>
+      <span>Tea Leaves</span><span class="sep">•</span>
+      <span>Spices</span><span class="sep">•</span>
+      <span>Rice &amp; Lentils</span><span class="sep">•</span>
+      <span>Salt</span><span class="sep">•</span>
+      <span>Biscuits &amp; Snacks</span><span class="sep">•</span>
+    </div>
+    <div class="marquee-item" aria-hidden="true">
+      <span>Mustard Oil</span><span class="sep">•</span>
+      <span>Wheat Flour</span><span class="sep">•</span>
+      <span>Sugar</span><span class="sep">•</span>
+      <span>Tea Leaves</span><span class="sep">•</span>
+      <span>Spices</span><span class="sep">•</span>
+      <span>Rice &amp; Lentils</span><span class="sep">•</span>
+      <span>Salt</span><span class="sep">•</span>
+      <span>Biscuits &amp; Snacks</span><span class="sep">•</span>
+    </div>
+  </div>
+</div>
 
+<div class="parallax-banner">
+  <img id="parallaxImg" src="https://images.unsplash.com/photo-1633536706889-af4e8cd7f64b?fm=jpg&q=70&w=1600&auto=format&fit=crop" alt="Indian grocery snacks and spice packets on a shelf">
+  <div class="parallax-overlay">
+    <div class="wrap"><p>"Fresh stock, every single week."</p></div>
+  </div>
+</div>
 
-    <section class="contact" id="contact">
+<section class="badges">
+  <div class="wrap">
+    <div class="badges-grid">
+      <div class="badge-item"><span class="bicon">🌿</span><h4>Fresh Stock</h4><p>Regularly restocked essentials</p></div>
+      <div class="badge-item"><span class="bicon">⚖️</span><h4>Fair Weight</h4><p>Accurate measure, every time</p></div>
+      <div class="badge-item"><span class="bicon">💰</span><h4>Fair Price</h4><p>Honest pricing, no surprises</p></div>
+      <div class="badge-item"><span class="bicon">🤝</span><h4>Local Trust</h4><p>Known &amp; trusted in the area</p></div>
+    </div>
+  </div>
+</section>
 
-      <div class="container contact-grid">
-
-        <div class="contact-card">
-
-          <h2>संपर्क करें</h2>
-
-          <div class="contact-item">
-            📞 <strong>9837392455</strong>
-          </div>
-
-          <div class="contact-item">
-            📍 Jugsana, Baldeo, Mathura
-          </div>
-
-          <a class="contact-button" href="tel:9837392455">
-            📞 अभी कॉल करें
-          </a>
-
-        </div>
-
-
-        <div class="contact-card">
-
-          <h2>स्टोर पर आइए</h2>
-
-          <p>
-            आपका स्वागत है। किसी सामान की उपलब्धता जानने के लिए
-            पहले फोन कर सकते हैं।
-          </p>
-
-          <a
-            class="contact-button"
-            href="https://www.google.com/maps/search/?api=1&query=Jugsana+Baldeo+Mathura"
-            target="_blank"
-          >
-            📍 Google Maps पर देखें
-          </a>
-
-        </div>
-
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">What We Stock</span>
+      <h2>Everything your kitchen runs on</h2>
+      <p>Fresh, everyday essentials at fair prices &mdash; the same items you'd run out for, always in stock.</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card reveal">
+        <div class="product-photo"><span class="product-tag">Popular</span><img src="https://images.unsplash.com/photo-1697294872375-9942fd94d2a7?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Spice jars"></div>
+        <div class="body"><span class="icon">🌶️</span><h3>Spices</h3><p>Turmeric, chilli, coriander, and every spice your recipes need.</p></div>
       </div>
+      <div class="product-card reveal">
+        <div class="product-photo"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Shelves of grocery items"></div>
+        <div class="body"><span class="icon">🌾</span><h3>Flour &amp; Grains</h3><p>Wheat flour, rice, and lentils, with the same purity as home.</p></div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-photo"><span class="product-tag">New Stock</span><img src="https://images.unsplash.com/photo-1633536706889-af4e8cd7f64b?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Indian snacks and masala packets"></div>
+        <div class="body"><span class="icon">🍪</span><h3>Snacks &amp; Namkeen</h3><p>Light snacks and roasted namkeen for kids and guests alike.</p></div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-photo"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Grocery shelves"></div>
+        <div class="body"><span class="icon">🛢️</span><h3>Cooking Oil</h3><p>Mustard, refined, and soybean oil &mdash; all major brands available.</p></div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-photo"><img src="https://images.unsplash.com/photo-1697294872375-9942fd94d2a7?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Spice and tea jars"></div>
+        <div class="body"><span class="icon">☕</span><h3>Tea</h3><p>Good tea leaves for your morning cup.</p></div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-photo"><img src="https://images.unsplash.com/photo-1633536706889-af4e8cd7f64b?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Packaged groceries"></div>
+        <div class="body"><span class="icon">🍬</span><h3>Sugar &amp; Salt</h3><p>Daily essentials, always kept in stock.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    </section>
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Customers Say</span>
+      <h2>What our neighbours think</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Everything I need for the kitchen, right around the corner. Never disappointed."</p>
+        <div class="test-name">&mdash; Local Customer</div>
+      </div>
+      <div class="test-card reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Good quality and honest pricing. It's the shop the whole family relies on."</p>
+        <div class="test-name">&mdash; Local Customer</div>
+      </div>
+      <div class="test-card reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Open early to late, so I can always drop by when I need something."</p>
+        <div class="test-name">&mdash; Local Customer</div>
+      </div>
+    </div>
+    <p class="test-note">Sample reviews &mdash; swap in real customer quotes when you have them</p>
+  </div>
+</section>
 
-  </main>
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Why Us</span>
+      <h2>Why choose Sonu Kirana Store</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <h3>Open every day</h3>
+        <p>7 AM to 9 PM, all seven days &mdash; ready whenever you need something.</p>
+      </div>
+      <div class="why-item reveal">
+        <h3>Trusted like family</h3>
+        <p>A shop the people of Jugsana and Baldeo have relied on for years.</p>
+      </div>
+      <div class="why-item reveal">
+        <h3>Fair price, fair weight</h3>
+        <p>Correct weight and correct price on every item &mdash; no shortcuts.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="location" id="location">
+  <div class="wrap loc-grid">
+    <div class="reveal">
+      <div class="section-head" style="margin-bottom:24px;">
+        <span class="tag">Find Us</span>
+        <h2>Easy to reach, easy to remember</h2>
+      </div>
+      <div class="loc-card">
+        <div class="loc-row"><span class="lbl">Store</span><span>Sonu Kirana Store</span></div>
+        <div class="loc-row"><span class="lbl">Address</span><span>Jugsana, Baldeo, Mathura</span></div>
+        <div class="loc-row"><span class="lbl">Phone</span><span>9837392455</span></div>
+        <div class="loc-row"><span class="lbl">Hours</span><span>7 AM &ndash; 9 PM</span></div>
+        <a href="tel:+919837392455" class="loc-call">📞 Call Now: 9837392455</a>
+      </div>
+    </div>
+    <div class="loc-map reveal" aria-label="Sonu Kirana Store location, Jugsana, Baldeo, Mathura"><div class="pin"></div></div>
+  </div>
+</section>
 
-  <a
-    class="whatsapp"
-    href="https://wa.me/919837392455?text=Namaste%20Sonu%20Kirana%20Store%2C%20mujhe%20samaan%20ke%20baare%20me%20jaankari%20chahiye."
-    target="_blank"
-  >
-    💬 WhatsApp
-  </a>
+<footer>
+  <div class="wrap foot-row">
+    <span><strong>Sonu Kirana Store</strong> &mdash; Jugsana, Baldeo, Mathura</span>
+    <span>📞 9837392455 &nbsp;|&nbsp; Open daily 7 AM &ndash; 9 PM</span>
+  </div>
+</footer>
 
+<div class="floating-actions">
+  <a href="https://wa.me/919837392455" class="fab fab-whatsapp" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">💬</a>
+  <a href="tel:+919837392455" class="fab fab-call" aria-label="Call the store">📞</a>
+</div>
 
-  <footer>
-    <p>
-      © 2026 <strong>Sonu Kirana Store</strong>
-      • Jugsana, Baldeo, Mathura
-    </p>
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
 
-    <p>
-      सभी तरह का किराना सामान • अच्छी क्वालिटी • उचित दाम
-    </p>
-  </footer>
+  const parallaxImg = document.getElementById('parallaxImg');
+  const banner = document.querySelector('.parallax-banner');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (parallaxImg && !reduceMotion) {
+    window.addEventListener('scroll', () => {
+      const rect = banner.getBoundingClientRect();
+      const offset = rect.top * 0.15;
+      parallaxImg.style.transform = `translateY(${offset}px)`;
+    }, { passive: true });
+  }
+</script>
 
 </body>
 </html>
